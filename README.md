@@ -1,7 +1,5 @@
 
-  # Responsive Website Prototype
-
-  This is a code bundle for Responsive Website Prototype. The original project is available at https://www.figma.com/design/L3nUtKhmwkiiMdOtiqv6pV/Responsive-Website-Prototype.
+  # LGC La petite enfance
 
   ## Running the code
 
