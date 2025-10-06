@@ -2,12 +2,13 @@
   # LGC La petite enfance
 
   ## Running the code
-
+```
   Run `npm i` to install the dependencies.
   npm install react-helmet-async
   npm install --save-dev @types/react-helmet-async
 
   Run `npm run dev` to start the development server.
+```
 
  
   
