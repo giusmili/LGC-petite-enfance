@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent } from "./ui/card";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ResponsiveImage } from "./figma/ResponsiveImage";
 
 export function Activities() {
   const activities = [
@@ -8,24 +8,21 @@ export function Activities() {
       title: "Ateliers créatifs",
       description:
         "Peinture, dessin, modelage et bricolage pour développer la motricité fine et l'expression artistique.",
-      image:
-        "https://images.unsplash.com/photo-1755727764068-7512292ef4b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMGFydCUyMGFjdGl2aXRpZXMlMjBjaGlsZHJlbnxlbnwxfHx8fDE3NTk2ODM1NzB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/assets/activities-creative.jpg",
       bgColor: "#FECACA",
     },
     {
       title: "Découvertes nature",
       description:
         "Jardinage, observation des saisons et activités en plein air pour connecter les enfants à leur environnement.",
-      image:
-        "https://images.unsplash.com/photo-1581360752623-dddeb81341e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYXR1cmUlMjBkaXNjb3ZlcnklMjBraWRzfGVufDF8fHx8MTc1OTY4MzU3MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/assets/activities-nature.jpg",
       bgColor: "#A8E6CF",
     },
     {
       title: "Éveil musical",
       description:
         "Chansons, instruments et rythmes pour développer l'écoute, la coordination et l'expression corporelle.",
-      image:
-        "https://images.unsplash.com/photo-1577877794879-40c77999dc14?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxtdXNpYyUyMGVkdWNhdGlvbiUyMGNoaWxkcmVufGVufDF8fHx8MTc1OTY4MzU3MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/assets/activities-music.jpg",
       bgColor: "#F4F1DE",
     },
   ];
@@ -60,10 +57,11 @@ export function Activities() {
               style={{ backgroundColor: activity.bgColor }}
             >
               <div className="relative">
-                <ImageWithFallback
-                  src={activity.image}
+                <ResponsiveImage
+                  baseName={activity.image.replace('/assets/','').replace('.jpg','')}
                   alt={activity.title}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  sizes="(min-width: 768px) 33vw, 100vw"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
               </div>

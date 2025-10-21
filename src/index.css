@@ -1631,6 +1631,16 @@
 
 html {
   font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+/* Account for sticky header height when scrolling to anchors */
+html {
+  scroll-padding-top: 5rem; /* default for mobile */
+}
+
+@media (min-width: 768px) {
+  html { scroll-padding-top: 7rem; }
 }
 
 @property --tw-rotate-x {

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hors ligne • La Grande Classe</title>
+    <link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+    <style>
+      :root { color-scheme: light dark; }
+      body {
+        margin: 0; padding: 2rem; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        display: grid; min-height: 100dvh; place-items: center; background: #fff; color: #111;
+      }
+      .card { max-width: 560px; width: 100%; border: 1px solid rgba(0,0,0,.1); border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 24px rgba(0,0,0,.05); }
+      h1 { margin: 0 0 .5rem; font-size: 1.25rem; }
+      p { margin: .25rem 0; color: #555; }
+      .tips { margin-top: 1rem; font-size: .95rem; color: #666; }
+      .actions { margin-top: 1.25rem; display: flex; gap: .75rem; }
+      a, button { appearance: none; border: 1px solid rgba(0,0,0,.15); background: #f6f7f9; color: #111; border-radius: 8px; padding: .625rem .9rem; text-decoration: none; cursor: pointer; }
+      button { background: #e9ebef; }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <h1>Vous êtes hors ligne</h1>
+      <p>Certains contenus peuvent ne pas être disponibles.</p>
+      <p>Réessayez lorsque vous serez connecté(e).</p>
+      <div class="actions">
+        <button onclick="location.reload()">Recharger</button>
+        <a href="/">Aller à l’accueil</a>
+      </div>
+      <p class="tips">Astuce: ajoutez le site à l’écran d’accueil pour un accès rapide.</p>
+    </main>
+  </body>
+  </html>
+

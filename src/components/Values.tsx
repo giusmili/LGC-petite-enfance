@@ -24,7 +24,7 @@ export function Values() {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#C7F9CC' }}>
+    <section id="ecole" className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#C7F9CC' }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 

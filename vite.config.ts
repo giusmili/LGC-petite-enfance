@@ -1,10 +1,60 @@
 
   import { defineConfig } from 'vite';
   import react from '@vitejs/plugin-react-swc';
+  import { VitePWA } from 'vite-plugin-pwa';
   import path from 'path';
 
   export default defineConfig({
-    plugins: [react()],
+    plugins: [
+      react(),
+      VitePWA({
+        registerType: 'autoUpdate',
+        manifest: false, // keep existing webmanifest in favicon/site.webmanifest
+        includeAssets: [
+          'favicon/favicon-16x16.png',
+          'favicon/favicon-32x32.png',
+          'favicon/apple-touch-icon.png',
+          'favicon/site.webmanifest',
+          'favicon/android-chrome-192x192.png',
+          'favicon/android-chrome-512x512.png',
+          'favicon/android-chrome-192x192-maskable.png',
+          'favicon/android-chrome-512x512-maskable.png',
+        ],
+        workbox: {
+          navigateFallback: '/offline.html',
+          globPatterns: ['**/*.{js,css,html,svg,png,ico,webp,avif,woff2}'],
+          runtimeCaching: [
+            {
+              urlPattern: /^https:\/\/images\.unsplash\.com\/.*$/i,
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'unsplash-images',
+                expiration: {
+                  maxEntries: 60,
+                  maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+                },
+                cacheableResponse: { statuses: [0, 200] },
+              },
+            },
+            {
+              urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/i,
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'local-images',
+                expiration: {
+                  maxEntries: 120,
+                  maxAgeSeconds: 60 * 60 * 24 * 90, // 90 days
+                },
+                cacheableResponse: { statuses: [0, 200] },
+              },
+            },
+          ],
+        },
+        devOptions: {
+          enabled: false,
+        },
+      }),
+    ],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {

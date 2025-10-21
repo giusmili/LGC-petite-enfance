@@ -1,6 +1,6 @@
 
 import { Button } from './ui/button';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ResponsiveImage } from './figma/ResponsiveImage';
 
 export function Hero() {
   return (
@@ -19,20 +19,22 @@ export function Hero() {
               et ses talents uniques à travers des activités ludiques et éducatives.
             </p>
             <Button 
+              asChild
               size="lg" 
               className="bg-green-500 hover:bg-green-600 text-white px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
-              Découvrir notre école
+              <a href="#ecole">Découvrir notre école</a>
             </Button>
           </div>
 
           {/* Image */}
           <div className="relative">
             <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1628099568673-ecbc6698fef5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMHBsYXlpbmclMjBvdXRkb29ycyUyMG5hdHVyZXxlbnwxfHx8fDE3NTk2MzM3NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              <ResponsiveImage
+                baseName="hero"
                 alt="Enfants jouant dans la nature"
                 className="w-full h-96 lg:h-[500px] object-cover"
+                sizes="(min-width: 1024px) 50vw, 100vw"
               />
             </div>
             {/* Decorative elements */}

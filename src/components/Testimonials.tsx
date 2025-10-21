@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent } from './ui/card';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ResponsiveImage } from './figma/ResponsiveImage';
 import { Quote } from 'lucide-react';
 
 export function Testimonials() {
@@ -9,19 +9,19 @@ export function Testimonials() {
       name: 'Marie Dubois',
       role: 'Maman de Lucas, 4 ans',
       quote: 'Lucas s\'épanouit chaque jour à La Grande Classe. L\'équipe bienveillante et les activités variées ont développé sa confiance en lui.',
-      image: 'https://images.unsplash.com/photo-1649880210584-3365f4c4c08b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMHBhcmVudCUyMHNtaWxpbmclMjBwb3J0cmFpdHxlbnwxfHx8fDE3NTk2ODM1NzB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+      image: '/assets/testimonial-1.jpg'
     },
     {
       name: 'Pierre Martin',
       role: 'Papa d\'Emma, 3 ans',
       quote: 'Une école exceptionnelle ! Emma adore ses journées et rentre toujours avec de nouvelles découvertes. Les éducatrices sont formidables.',
-      image: 'https://images.unsplash.com/photo-1649880210584-3365f4c4c08b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMHBhcmVudCUyMHNtaWxpbmclMjBwb3J0cmFpdHxlbnwxfHx8fDE3NTk2ODM1NzB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+      image: '/assets/testimonial-2.jpg'
     },
     {
       name: 'Sophie Leroy',
       role: 'Maman de Théo, 5 ans',
       quote: 'Théo a développé une belle autonomie et une curiosité incroyable. L\'approche pédagogique respecte vraiment le rythme de chaque enfant.',
-      image: 'https://images.unsplash.com/photo-1649880210584-3365f4c4c08b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMHBhcmVudCUyMHNtaWxpbmclMjBwb3J0cmFpdHxlbnwxfHx8fDE3NTk2ODM1NzB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+      image: '/assets/testimonial-3.jpg'
     }
   ];
 
@@ -53,10 +53,11 @@ export function Testimonials() {
                 </p>
                 <div className="flex items-center space-x-4">
                   <div className="relative">
-                    <ImageWithFallback
-                      src={testimonial.image}
+                    <ResponsiveImage
+                      baseName={testimonial.image.replace('/assets/','').replace('.jpg','')}
                       alt={testimonial.name}
                       className="w-12 h-12 rounded-full object-cover border-2 border-green-200"
+                      sizes="48px"
                     />
                   </div>
                   <div>

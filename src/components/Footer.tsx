@@ -10,7 +10,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-10 h-10 bg-gradient-to-br from-green-200 to-green-300 rounded-full flex items-center justify-center">
-                <span className="text-green-800 font-bold text-lg">LG</span>
+                <span className="text-green-800 font-bold text-lg">LGC</span>
               </div>
               <div>
                 <h3 className="text-lg text-white" style={{ fontFamily: 'Fredoka, cursive' }}>
