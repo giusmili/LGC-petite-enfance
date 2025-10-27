@@ -22,7 +22,7 @@ export function Header() {
           <div className="flex items-center space-x-2">
             <div>
               <h1 className="text-lg font-bold text-gray-800 flex items-center gap-2">
-                <img src="./assets/logo_lgc.png" alt="La grande classe" className="w-30 h-20" />
+                <img src="/assets/logo_lgc.png" alt="La grande classe" className="w-30 h-20 object-contain" />
               </h1>
                <p className="text-xs text-gray-600">
                 <span className="pannel">🚸</span>Petite Enfance</p>
@@ -35,7 +35,7 @@ export function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-700 hover:text-green-600 transition-colors duration-200 text-sm font-medium"
+                className="text-gray-700 hover:text-green-600 transition-colors duration-200 text-base font-medium"
               >
                 {item.label}
               </a>
@@ -60,7 +60,7 @@ export function Header() {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-gray-700 hover:text-green-600 transition-colors duration-200 text-sm font-medium py-2"
+                  className="text-gray-700 hover:text-green-600 transition-colors duration-200 text-base font-medium py-3"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
