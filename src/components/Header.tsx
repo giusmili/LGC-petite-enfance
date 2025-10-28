@@ -25,7 +25,7 @@ export function Header() {
                 <img src="/assets/logo_lgc.png" alt="La grande classe" className="w-30 h-20 object-contain" />
               </h1>
                <p className="text-xs text-gray-600">
-                <span className="pannel">🚸</span>Petite Enfance</p>
+                <span className="pannel"></span>La Petite Enfance</p>
             </div>
           </div>
 
